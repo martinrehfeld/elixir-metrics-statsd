@@ -32,7 +32,7 @@ module for Statsd.
     [name: :metrics_statsd,
      files: ["lib", "mix.exs", "README*", "LICENSE*"],
      maintainers: ["Martin Rehfeld"],
-     licenses: ["Apache 2.0"],
+     licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/martinrehfeld/elixir-metrics-statsd",
               "Docs" => "https://github.com/martinrehfeld/elixir-metrics-statsd"}]
   end
