@@ -8,10 +8,13 @@ build:
 test:
 	docker-compose run metrics_statsd mix test
 
+console:
+	docker-compose run metrics_statsd iex -S mix
+
 register-user:
 	docker-compose run metrics_statsd mix hex.user register
 
 publish:
 	docker-compose run metrics_statsd mix hex.publish
 
-.PHONY: error build test register-user publish
+.PHONY: error build test console register-user publish
