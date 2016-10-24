@@ -1,0 +1,13 @@
+version: '2'
+services:
+  metrics_statsd:
+    build:
+      context: .
+    links:
+      - statsd
+
+  # Output statsd metrics to stdout
+  statsd:
+    image: mendhak/udp-listener
+    environment:
+      - UDPPORT=8125
