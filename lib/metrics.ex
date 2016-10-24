@@ -4,7 +4,7 @@ defmodule Metrics do
   """
 
   @app_name :metrics_statsd
-  @default_reporter MetricsStatsd
+  @default_reporter MetricsStatsD
 
   @doc """
   Initialize the `Metrics` module and set the reporting module to use;
