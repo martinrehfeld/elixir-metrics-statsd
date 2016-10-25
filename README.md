@@ -34,3 +34,15 @@ module for Statsd.
         # code to time
       end
     ```
+
+## Using the MetricsStatsD reporting module
+
+`MetricsStatsD` uses `ExStatsD` under the hood, so please
+make sure to configure it to your liking, e.g.
+
+```elixir
+config :ex_statsd,
+  host: "statsd",
+  port: 8125,
+  namespace: "myapp"
+```
