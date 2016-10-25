@@ -15,6 +15,6 @@ register-user:
 	docker-compose run metrics_statsd mix hex.user register
 
 publish:
-	docker-compose run metrics_statsd mix hex.publish
+	docker-compose run metrics_statsd mix do hex.user auth, hex.publish
 
 .PHONY: error build test console register-user publish
