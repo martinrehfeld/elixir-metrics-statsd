@@ -37,12 +37,12 @@ module for Statsd.
 
 ## Using the MetricsStatsD reporting module
 
-`MetricsStatsD` uses `ExStatsD` under the hood, so please
+`MetricsStatsD` uses `Statix` under the hood, so please
 make sure to configure it to your liking, e.g.
 
 ```elixir
-config :ex_statsd,
+config :statix,
   host: "statsd",
-  port: 8125,
-  namespace: "myapp"
+  port: 8125
+  prefix: "myapp",
 ```

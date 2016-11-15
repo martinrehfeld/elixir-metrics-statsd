@@ -31,8 +31,12 @@ defmodule Metrics do
   also be used to change the module after initialization.
   """
   def set_reporter_module(mod_metrics) do
+    init_reporter_module(mod_metrics)
     Application.put_env(@app_name, :metrics_engine, :metrics.init(mod_metrics))
   end
+
+  def init_reporter_module(MetricsStatsD), do: :ok = MetricsStatsD.Statix.connect
+  def init_reporter_module(_), do: :ok
 
   @doc """
   Wrapper for `:metrics.update_histogram/3`.

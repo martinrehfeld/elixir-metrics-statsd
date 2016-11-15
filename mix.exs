@@ -11,11 +11,11 @@ defmodule Metrics.Mixfile do
   end
 
   def application do
-    [applications: [:ex_statsd, :logger]]
+    [applications: [:statix, :logger]]
   end
 
   defp deps do
-    [{:ex_statsd, ">= 0.5.1"},
+    [{:statix, git: "https://github.com/lexmag/statix.git"},
      {:metrics, "~> 1.0.1"}]
   end
 
