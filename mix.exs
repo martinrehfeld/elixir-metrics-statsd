@@ -15,7 +15,7 @@ defmodule Metrics.Mixfile do
   end
 
   defp deps do
-    [{:statix, git: "https://github.com/lexmag/statix.git"},
+    [{:statix, "~> 1.0.0"},
      {:metrics, "~> 1.0.1"},
      {:ex_doc, ">= 0.0.0", only: :dev}]
   end
