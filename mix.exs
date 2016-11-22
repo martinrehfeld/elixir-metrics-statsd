@@ -33,7 +33,6 @@ module for Statsd.
      files: ["lib", "mix.exs", "README*", "LICENSE*"],
      maintainers: ["Martin Rehfeld"],
      licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/martinrehfeld/elixir-metrics-statsd",
-              "Docs" => "https://hexdocs.pm/metrics_statsd/1.0.2"}]
+     links: %{"GitHub" => "https://github.com/martinrehfeld/elixir-metrics-statsd"}]
   end
 end
