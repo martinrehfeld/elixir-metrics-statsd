@@ -3,7 +3,7 @@ defmodule Metrics.Mixfile do
 
   def project do
     [app: :metrics_statsd,
-     version: "1.0.1",
+     version: "1.0.2",
      elixir: "~> 1.3",
      description: description(),
      package: package(),
@@ -11,11 +11,11 @@ defmodule Metrics.Mixfile do
   end
 
   def application do
-    [applications: [:ex_statsd, :logger]]
+    [applications: [:statix, :logger]]
   end
 
   defp deps do
-    [{:ex_statsd, ">= 0.5.1"},
+    [{:statix, git: "https://github.com/lexmag/statix.git"},
      {:metrics, "~> 1.0.1"},
      {:ex_doc, ">= 0.0.0", only: :dev}]
   end
@@ -34,6 +34,6 @@ module for Statsd.
      maintainers: ["Martin Rehfeld"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/martinrehfeld/elixir-metrics-statsd",
-              "Docs" => "https://hexdocs.pm/metrics_statsd/1.0.1"}]
+              "Docs" => "https://hexdocs.pm/metrics_statsd/1.0.2"}]
   end
 end
