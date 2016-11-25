@@ -28,7 +28,10 @@ defmodule MetricsStatsD do
   end
 
   def update_histogram(name, fun) when is_function(fun, 0) do
-    __MODULE__.Statix.measure(sanitize(name), [], fun)
+    {elapsed, result} = :timer.tc(fun)
+    update_histogram(name, elapsed / 1_000)
+
+    result
   end
 
   def update_histogram(name, value) do
@@ -40,7 +43,7 @@ defmodule MetricsStatsD do
   end
 
   def update_meter(_name, _value) do
-    throw :not_implemented
+    :not_implemented
   end
 
   def delete(_name) do
