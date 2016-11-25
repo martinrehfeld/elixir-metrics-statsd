@@ -3,7 +3,7 @@ defmodule Metrics.Mixfile do
 
   def project do
     [app: :metrics_statsd,
-     version: "1.0.2",
+     version: "1.0.3",
      elixir: "~> 1.3",
      description: description(),
      package: package(),
@@ -17,6 +17,7 @@ defmodule Metrics.Mixfile do
   defp deps do
     [{:statix, "~> 1.0.0"},
      {:metrics, "~> 1.0.1"},
+     {:mock, "~> 0.2.0", only: :test},
      {:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
