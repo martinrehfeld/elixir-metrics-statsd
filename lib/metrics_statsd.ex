@@ -47,6 +47,7 @@ defmodule MetricsStatsD do
     :ok
   end
 
+  defp sanitize([:hackney|_] = name), do: name |> Enum.map(&sanitize/1) |> Enum.join(".")
   defp sanitize(name) when is_list(name), do: Enum.map(name, &sanitize/1)
   defp sanitize(name) when is_atom(name), do: Atom.to_string(name)
   defp sanitize(name), do: name
