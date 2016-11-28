@@ -12,7 +12,8 @@ defmodule MetricsStatsDTest do
       assert "hello world" == :erlang.iolist_to_binary(MetricsStatsD.increment_counter(input))
     end)
 
-    # Hackney special case
+    # Hackney special cases
     assert "hello.hackney.foo.bar" == :erlang.iolist_to_binary(MetricsStatsD.increment_counter(["hello.", [:hackney, :foo, :bar]]))
+    assert "hello.hackney_pool.foo.bar" == :erlang.iolist_to_binary(MetricsStatsD.increment_counter(["hello.", [:hackney_pool, :foo, :bar]]))
   end
 end
